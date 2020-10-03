@@ -1,0 +1,5 @@
+document.querySelector("#job-<%= @job.id %>").style.display = 'none';
+
+var message = document.createElement('p');
+message.innerText = 'タスク「<%= @job.name %>」を削除しました。残りのタスクは<%= current_user.jobs.count %>件です。';
+document.querySelector('table').insertAdjacentElement('beforebegin', message);
